@@ -1,0 +1,257 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{
+    --whithe: #fff;
+    --platinum: #e8ebe4;
+    --gray: #bec1bb;
+    --black: #000000;
+    --blue: #6767b5;
+    --x-small: 10px;
+    --small: 14px;
+    --medium: 24px;
+    --large: 45px;
+}
+.container{
+    display: grid;
+    gap: 10px;
+    grid-template-areas: /*sirve para crear template*/
+        'header header header'
+        'sidebar main main'
+        'footer footer footer';
+}
+
+/*
+.grid-items{
+    border: 1px solid #333;
+}*/
+
+.grid-items > h1{
+    color: var(--whithe);
+    font-size: var(--large);
+    background-color: var(--blue);
+}
+
+.header{
+    grid-area: header;
+    text-align: center;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    grid-area: sidebar;
+    padding: 27px 50px;
+}
+
+.sidebar > h2{
+    font-size: var(--medium);
+    margin-bottom: 13px;
+}
+
+.sidebar ul{
+    list-style: none;
+    text-decoration: none;
+}
+
+.sidebar ul > li{
+    margin-bottom: 10px;;
+}
+
+
+
+span{
+    color: var(--gray);
+    margin-left: 3px;
+}
+
+.main{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 25px;
+}
+
+.main div{
+    box-shadow: 5px 5px 15px gray; /*Se agrega una sombra al div*/
+}
+
+.main div > img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.main div > p:nth-child(2){
+    text-align: center;
+    font-size: var(--medium);
+    font-weight: bold;
+}
+
+.main div > p:nth-child(3){
+    color: var(--black);
+    text-align: center;
+    font-size: var(--small);
+    margin-top: 15px;
+    
+}
+
+.main div > p:nth-child(4){
+    text-align: center;
+    color: var(--whithe);
+    margin-top: 24px;
+    padding: 8px;
+    background-color: var(--blue);
+    cursor: pointer;
+    
+}
+
+.footer{
+    grid-area: footer;
+    color: var(--gray);
+    text-align: center;
+    font-size: var(--medium);
+    padding: 23px;
+    background-color: var(--whithe);
+}
+
+
+@media (max-width: 920px) {
+
+    .container{
+        display: block;
+        gap: 10px;
+        grid-template-areas: /*sirve para crear template*/
+            'header header header'
+            'sidebar main main'
+            'footer footer footer';
+    }
+
+    .sidebar{
+        display: flex;
+
+    }
+
+    .sidebar ul{
+        display: flex;
+    }
+
+    .sidebar ul > li:nth-child(1),
+    .sidebar ul > li:nth-child(2),
+    .sidebar ul > li:nth-child(3) {
+        margin-bottom: 12px;
+        margin-right: 10px;
+    }
+
+    .main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 12px 44px;
+    }
+
+    .main div {
+        box-shadow: 5px 5px 15px gray;
+        border-radius: 59px;
+    }
+
+    .main div > p:nth-child(4) {
+        text-align: center;
+        color: var(--whithe);
+        margin-top: 24px;
+        padding: 9px;
+        background-color: var(--blue);
+        cursor: pointer;
+        border-radius: 31px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .container{
+        display: block;
+        gap: 10px;
+        grid-template-areas: /*sirve para crear template*/
+            'header header header'
+            'sidebar main main'
+            'footer footer footer';
+    }
+
+    .sidebar{
+        display: flex;
+    }
+
+    .sidebar ul{
+        display: block;
+    }
+
+    
+    .main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: auto;
+        gap: 12px 44px;
+    }
+
+    .main div {
+        box-shadow: 5px 5px 15px gray;
+        border-radius: 59px;
+    }
+
+    .main div > p:nth-child(4) {
+        text-align: center;
+        color: var(--whithe);
+        margin-top: 24px;
+        padding: 9px;
+        background-color: var(--blue);
+        cursor: pointer;
+        border-radius: 31px;
+    }
+}
+
+@media (max-width: 410px) {
+
+    .container{
+        display: block;
+        gap: 10px;
+        grid-template-areas: /*sirve para crear template*/
+            'header header header'
+            'sidebar main main'
+            'footer footer footer';
+    }
+
+    .sidebar{
+        display: flex;
+    }
+
+    
+
+    .main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: auto;
+        gap: 12px 44px;
+    }
+
+    .main div {
+        box-shadow: 5px 5px 15px gray;
+        border-radius: 59px;
+    }
+
+    .main div > p:nth-child(4) {
+        text-align: center;
+        color: var(--whithe);
+        margin-top: 24px;
+        padding: 9px;
+        background-color: var(--blue);
+        cursor: pointer;
+        border-radius: 31px;
+    }
+}
